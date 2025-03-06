@@ -2,32 +2,60 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tìm kiếm Google Sheets</title>
+    <title>Tìm kiếm dữ liệu học viên</title>
 </head>
 <body>
-    <h2>Tìm kiếm dữ liệu từ Google Sheets</h2>
-    <input type="text" id="searchInput" placeholder="Nhập từ khóa...">
+    <h2>Tìm kiếm thông tin học viên</h2>
+    <input type="text" id="searchInput" placeholder="Nhập họ tên, mã môn...">
     <button onclick="searchData()">Tìm kiếm</button>
-    <ul id="results"></ul>
 
-    <script>
-        const API_URL = "https://script.google.com/macros/s/AKfycbwlrVtXS5m2iezDW2fwAHf5z8VmZM8TIW3qQryQkDkh_jyMJCaD12NX0si4TH3cyKh1/exec";
+    <table border="1" id="resultsTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã Môn</th>
+                <th>Họ Tên</th>
+                <th>Ngày Đóng</th>
+                <th>Số Tiền</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
 
-        async function searchData() {
-            const query = document.getElementById("searchInput").value;
-            const response = await fetch(`${API_URL}?q=${query}`);
-            const data = await response.json();
+<script>
+let data = [];
 
-            const resultList = document.getElementById("results");
-            resultList.innerHTML = "";
+// Hàm tải dữ liệu từ Google Sheets
+async function fetchData() {
+    const url = "URL_CSV_CỦA_BẠN";  // Điền URL CSV ở đây
+    const response = await fetch(url);
+    const csv = await response.text();
+    const rows = csv.split("\n").slice(1); // bỏ hàng đầu (tiêu đề)
+    data = rows.map(row => row.split(";"));
+}
 
-            data.forEach(row => {
-                const li = document.createElement("li");
-                li.textContent = row.join(" | ");
-                resultList.appendChild(li);
-            });
-        }
-    </script>
+// Hàm tìm kiếm dữ liệu
+function searchData() {
+    const keyword = document.getElementById("searchInput").value.toLowerCase();
+    const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(keyword)));
+
+    const tbody = document.querySelector("#resultsTable tbody");
+    tbody.innerHTML = "";
+
+    filteredData.forEach(row => {
+        const tr = document.createElement("tr");
+        row.forEach(cell => {
+            const td = document.createElement("td");
+            td.textContent = cell;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+    });
+}
+
+// Khởi tạo dữ liệu khi tải trang
+window.onload = fetchData;
+</script>
 </body>
 </html>
