@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
     <meta charset="UTF-8">
-    <title>Trang chủ truy cập nhanh lớp học</title>
+    <title>Trang chủ truy cập nhanh các lớp</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +12,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
 
         th, td {
@@ -27,8 +27,8 @@
         }
 
         a {
-            color: #2980b9;
             text-decoration: none;
+            color: #3498db;
         }
 
         a:hover {
@@ -36,25 +36,26 @@
         }
     </style>
 </head>
-
 <body>
-    <h2>📚 Trang chủ truy cập nhanh các Lớp 📚</h2>
 
-    <table id="linksTable">
-        <thead>
-            <tr>
-                <th>STT</th>
-                <th>Lớp</th>
-                <th>Link truy cập</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
-            <!-- Nội dung được thêm bằng JavaScript -->
-        </tbody>
-    </table>
+<h2>📚 Trang chủ truy cập nhanh các Lớp 📚</h2>
 
-    <script>
-        const data = [
+<table>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Lớp</th>
+            <th>Link truy cập</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+        <!-- Data sẽ hiển thị ở đây -->
+    </tbody>
+</table>
+
+<script>
+    // Bạn tự điền dữ liệu vào đây
+    const data = [
             {lop:"HOA6", link:"https://docs.google.com/spreadsheets/d/1XLaxI0KhRxoW2sfuECqTCEIpQ8gGYTP3XJw3SuDt2nI/edit#gid=2108064852"},
             {lop:"HOA7",link:"https://docs.google.com/spreadsheets/d/1WRAzJldvfJfQKb59yEFHH9nmzNMkVOkme8usqM3s6pY/edit#gid=2129056003"},
             {lop:"HOA8",link:"https://docs.google.com/spreadsheets/d/117ITQL2PrEn5jkV3Si7EzFmPSX3TyeD_6PwomGXoO9o/edit#gid=2108064852"},
@@ -76,23 +77,25 @@
             {lop:"TOAN7/2",link:"https://docs.google.com/spreadsheets/d/1pUu9K-bazfOvb36NMOsT4gw_lLp7k13_ck9DcJkgnQ/edit#gid=2108064852"},
             {lop:"TOAN8",link:"https://docs.google.com/spreadsheets/d/1c3NMSmr61Ix6LQ31keotO0knTnpZ892pxRWTiyKBMtg/edit#gid=2108064852"},
             {lop:"TOAN9",link:"https://docs.google.com/spreadsheets/d/1c3NMSmr61Ix6LQ31keotO0knTnpZ892pxRWTiyKBMtg/edit#gid=2108064852"}
-        ];
+        
+        // Thêm tiếp các mục khác tương tự
+    ];
 
-        function createTable() {
-            const tableBody = document.getElementById("tableBody");
-            data.forEach((item, index) => {
-                const tr = document.createElement("tr");
-                tr.innerHTML = `
-                    <td>${index + 1}</td>
-                    <td>${item.lop}</td>
-                    <td><a href="${item.link}" target="_blank">Truy cập</a></td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
+    function renderTable() {
+        const tableBody = document.getElementById("tableBody");
+        data.forEach((item, index) => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${item.lop}</td>
+                <td><a href="${item.link}" target="_blank">👉 Mở Link</a></td>
+            `;
+            tableBody.appendChild(row);
+        });
+    }
 
-        window.onload = createTable;
-    </script>
+    window.onload = renderTable;
+</script>
+
 </body>
-
 </html>
