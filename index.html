@@ -6,107 +6,124 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            margin: 20px;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
         }
         details {
-            background: #f1f1f1;
-            margin-bottom: 10px;
+            background-color: #ffffff;
             padding: 10px;
+            margin-bottom: 10px;
             border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         summary {
-            cursor: pointer;
             font-weight: bold;
-            background-color: #34495e;
-            color: white;
-            padding: 8px;
+            cursor: pointer;
+            padding: 5px;
+            outline: none;
         }
         ul {
             list-style-type: none;
-            padding: 5px;
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
         }
         a {
             text-decoration: none;
-            color: #2980b9;
+            color: #3498db;
         }
         a:hover {
-            color: #e67e22;
+            color: #d35400;
         }
     </style>
 </head>
 <body>
 
-<h2>📚 Trang chủ truy cập nhanh các lớp 📚</h2>
+    <h2>📚 Trang chủ truy cập nhanh các lớp 📚</h2>
 
-<div id="container"></div>
+    <div id="menu"></div>
 
-<script>
-    // Dữ liệu theo môn và lớp
-    const subjects = {
-        "Hoá": [
-            { class: "HOA6", link: "#" },
-            { class: "HOA7", link: "#" },
-            { class: "HOA8", link: "#" },
-            { class: "HOA9", link: "#" }
-        ],
-        "Lý": [
-            { class: "LY6", link: "#" },
-            { class: "LY7", link: "#" },
-            { class: "LY8", link: "#" },
-            { class: "LY9", link: "#" }
-        ],
-        "Văn": [
-            { class: "VAN6", link: "#" },
-            { class: "VAN7", link: "#" },
-            { class: "VAN8", link: "#" },
-            { class: "VAN9", link: "#" }
-        ],
-        "Tiếng Anh THCS": [
-            { class: "TA6", link: "#" },
-            { class: "TA7", link: "#" },
-            { class: "TA8", link: "#" },
-            { class: "TA9", link: "#" }
-        ],
-        "Toán THCS": [
-            { class: "TOAN6", link: "#" },
-            { class: "TOAN7/1", link: "#" },
-            { class: "TOAN7/2", link: "#" },
-            { class: "TOAN8", link: "#" },
-            { class: "TOAN9", link: "#" }
-        ],
-        "Tiếng Anh Tiểu Học": [
-            { class: "TA1", link: "#" },
-            { class: "TA2", link: "#" },
-            { class: "TA3", link: "#" },
-            { class: "TA4", link: "#" },
-            { class: "TA5", link: "#" }
-        ],
-        "Toán & Tiếng Việt": [
-            { class: "TV1", link: "#" },
-            { class: "TV2", link: "#" },
-            { class: "TV3", link: "#" },
-            { class: "TV4", link: "#" },
-            { class: "TV5", link: "#" }
-        ]
-    };
+    <script>
+        const data = {
+            "Hóa": [
+                {lop: "HOA6", link: "#"},
+                {lop: "HOA7", link: "#"},
+                {lop: "HOA8", link: "#"},
+                {lop: "HOA9", link: "#"}
+            ],
+            "Lý": [
+                {lop: "LY6", link: "#"},
+                {lop: "LY7", link: "#"},
+                {lop: "LY8", link: "#"},
+                {lop: "LY9", link: "#"}
+            ],
+            "Văn": [
+                {lop: "VAN6", link: "#"},
+                {lop: "VAN7", link: "#"},
+                {lop: "VAN8", link: "#"},
+                {lop: "VAN9", link: "#"}
+            ],
+            "Tiếng Anh THCS": [
+                {lop: "TA6", link: "#"},
+                {lop: "TA7", link: "#"},
+                {lop: "TA8", link: "#"},
+                {lop: "TA9", link: "#"}
+            ],
+            "Toán THCS": [
+                {lop: "TOAN6", link: "#"},
+                {lop: "TOAN7/1", link: "#"},
+                {lop: "TOAN7/2", link: "#"},
+                {lop: "TOAN8", link: "#"},
+                {lop: "TOAN9", link: "#"}
+            ],
+            "Tiếng Anh Tiểu học": [
+                {lop: "TA1", link: "#"},
+                {lop: "TA2", link: "#"},
+                {lop: "TA3", link: "#"},
+                {lop: "TA4", link: "#"},
+                {lop: "TA5", link: "#"}
+            ],
+            "Toán & Tiếng Việt": [
+                {lop: "TV1", link: "#"},
+                {lop: "TV2", link: "#"},
+                {lop: "TV3", link: "#"},
+                {lop: "TV4", link: "#"},
+                {lop: "TV5", link: "#"}
+            ]
+        };
 
-    function renderMenu() {
-        const container = document.getElementById("menu");
+        function renderMenu() {
+            const menu = document.getElementById('menu');
+            for (let subject in data) {
+                const details = document.createElement('details');
+                const summary = document.createElement('summary');
+                summary.textContent = subject;
 
-        for (let subject in subjects) {
-            const details = document.createElement('details');
-            details = `
-                <summary>${subject}</summary>
-                <ul>`;
-                    subjects[subject].forEach(item => {
-                        html += `<li><a href="${item.link}" target="_blank">🔗 ${item.class}</a></li>`;
-                    });
-                html += `</ul></details>`;
-                container.innerHTML += html;
-            });
+                const ul = document.createElement('ul');
+                data[subject].forEach(item => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.textContent = item.lop;
+                    a.href = item.link;
+                    a.target = "_blank";
+                    li.appendChild(a);
+                    ul.appendChild(li);
+                });
+
+                details.appendChild(summary);
+                details.appendChild(ul);
+                menu.appendChild(details);
+            }
         }
 
         window.onload = renderMenu;
     </script>
+
 </body>
 </html>
