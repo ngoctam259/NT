@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ truy cập nhanh các lớp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        details {
+            background: #f1f1f1;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            background-color: #34495e;
+            color: white;
+            padding: 8px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 5px;
+        }
+        a {
+            text-decoration: none;
+            color: #2980b9;
+        }
+        a:hover {
+            color: #e67e22;
+        }
+    </style>
+</head>
+<body>
+
+<h2>📚 Trang chủ truy cập nhanh các lớp 📚</h2>
+
+<div id="container"></div>
+
+<script>
+    // Dữ liệu theo môn và lớp
+    const subjects = {
+        "Hoá": [
+            { class: "HOA6", link: "#" },
+            { class: "HOA7", link: "#" },
+            { class: "HOA8", link: "#" },
+            { class: "HOA9", link: "#" }
+        ],
+        "Lý": [
+            { class: "LY6", link: "#" },
+            { class: "LY7", link: "#" },
+            { class: "LY8", link: "#" },
+            { class: "LY9", link: "#" }
+        ],
+        "Văn": [
+            { class: "VAN6", link: "#" },
+            { class: "VAN7", link: "#" },
+            { class: "VAN8", link: "#" },
+            { class: "VAN9", link: "#" }
+        ],
+        "Tiếng Anh THCS": [
+            { class: "TA6", link: "#" },
+            { class: "TA7", link: "#" },
+            { class: "TA8", link: "#" },
+            { class: "TA9", link: "#" }
+        ],
+        "Toán THCS": [
+            { class: "TOAN6", link: "#" },
+            { class: "TOAN7/1", link: "#" },
+            { class: "TOAN7/2", link: "#" },
+            { class: "TOAN8", link: "#" },
+            { class: "TOAN9", link: "#" }
+        ],
+        "Tiếng Anh Tiểu Học": [
+            { class: "TA1", link: "#" },
+            { class: "TA2", link: "#" },
+            { class: "TA3", link: "#" },
+            { class: "TA4", link: "#" },
+            { class: "TA5", link: "#" }
+        ],
+        "Toán & Tiếng Việt": [
+            { class: "TV1", link: "#" },
+            { class: "TV2", link: "#" },
+            { class: "TV3", link: "#" },
+            { class: "TV4", link: "#" },
+            { class: "TV5", link: "#" }
+        ]
+    };
+
+    function renderMenu() {
+        const container = document.getElementById("menu");
+
+        for (let subject in subjects) {
+            const details = document.createElement('details');
+            details = `
+                <summary>${subject}</summary>
+                <ul>`;
+                    subjects[subject].forEach(item => {
+                        html += `<li><a href="${item.link}" target="_blank">🔗 ${item.class}</a></li>`;
+                    });
+                html += `</ul></details>`;
+                container.innerHTML += html;
+            });
+        }
+
+        window.onload = renderMenu;
+    </script>
+</body>
+</html>
