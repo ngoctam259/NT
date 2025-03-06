@@ -1,69 +1,108 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ Tra cứu dữ liệu</title>
+    <title>Trang chủ mở nhanh liên kết</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            padding: 20px;
         }
+
+        h2 {
+            color: #2c3e50;
+        }
+
         table {
             border-collapse: collapse;
             width: 100%;
-            max-width: 800px;
-            margin: auto;
+            margin-top: 20px;
         }
-        th, td {
+
+        table, th, td {
             border: 1px solid #ddd;
-            padding: 8px;
+        }
+
+        th, td {
+            padding: 10px;
             text-align: center;
         }
+
         th {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #34495e;
+            color: #fff;
         }
+
         a {
+            color: #2980b9;
             text-decoration: none;
-            color: #007bff;
         }
+
         a:hover {
-            color: red;
+            color: #e67e22;
         }
+
+        input {
+            width: 250px;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
     </style>
 </head>
 <body>
+    <h2>📚 Trang chủ truy cập nhanh các Lớp 📚</h2>
 
-<h2 style="text-align: center;">Trang chủ Tra cứu dữ liệu lớp học</h2>
+    <input type="text" id="searchInput" placeholder="Nhập mã lớp để tìm kiếm nhanh" onkeyup="filterLinks()">
 
-<table>
-    <thead>
-        <tr>
-            <th>Lớp</th>
-            <th>Link truy cập</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr><td>HOA6</td><td><a href="https://docs.google.com/spreadsheets/d/1XLaxI0KhRxoW2sfuECqTCEIpQ8gGYTP3XJw3SuDt2nI/edit">Mở link</a></td></tr>
-        <tr><td>HOA7</td><td><a href="https://docs.google.com/spreadsheets/d/1WRAzJldvfJfQKb59yEFHH9nmzNMkVOkme8usqM3s6pY/edit">Mở link</a></td></tr>
-        <tr><td>HOA8</td><td><a href="https://docs.google.com/spreadsheets/d/117ITQL2PrEn5jkV3Si7EzFmPSX3TyeD_6PwomGXoO9o/edit">Mở link</a></td></tr>
-        <tr><td>HOA9</td><td><a href="https://docs.google.com/spreadsheets/d/1B08XsXoC9wwF0aaB4VTgG8DErcKEZVURr6ipVTEbDFc/edit">Mở link</a></td></tr>
-        <tr><td>LY6</td><td><a href="https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit">Mở link</a></td></tr>
-        <tr><td>LY7</td><td><a href="https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit">Mở link</a></td></tr>
-        <tr><td>LY8</td><td><a href="https://docs.google.com/spreadsheets/d/1nPRBgncC6zIAz7wV3_TSo9vFz4rgCQkmU17iQ3DAQmQ/edit">Mở link</a></td></tr>
-        <tr><td>LY9</td><td><a href="https://docs.google.com/spreadsheets/d/1XCPYDNey-aSQ2L36NMOsT4gw_lLp7k13_ck9DcJkgnQ/edit">Mở link</a></td></tr>
-        <tr><td>VAN6</td><td><a href="https://docs.google.com/spreadsheets/d/1jN0-MAVd_DaJrBiK1s9FvV0O3e3ulv5uaGywYCGiPr8/edit">Mở link</a></td></tr>
-        <tr><td>VAN7</td><td><a href="https://docs.google.com/spreadsheets/d/1Jb7bA3Un4lO73hOV2HjE8L0b-89W8GSTrod3155imTI/edit">Mở link</a></td></tr>
-        <tr><td>VAN8</td><td><a href="https://docs.google.com/spreadsheets/d/17Ni8vcIkSmC7AWhXNvcaD5b5jWzn892pxRWTiyKBMtg/edit">Mở link</a></td></tr>
-        <tr><td>VAN9</td><td><a href="https://docs.google.com/spreadsheets/d/1s9OjqZpjDaWJxQDBfJJs7ITf3BqHNf5zZO2_WAXfnwE/edit">Mở link</a></td></tr>
-        <tr><td>TA1</td><td><a href="https://docs.google.com/spreadsheets/d/12Gs-1N3yugP5c5zEFPvoYkke9hLDFyigdX3gntiMPY4/edit">Mở link</a></td></tr>
-        <tr><td>TA2</td><td><a href="https://docs.google.com/spreadsheets/d/1JRSxD3WPAsgiQ_qQDyXBFDFyU66fsVpO-4QnqTIV1AE/edit">Mở link</a></td></tr>
-        <tr><td>TA3</td><td><a href="https://docs.google.com/spreadsheets/d/13ZvDSclDOclAJlSHcd63AGWwg4ejRj80psuLE07Pu84/edit">Mở link</a></td></tr>
-        <tr><td>TA4</td><td><a href="https://docs.google.com/spreadsheets/d/18TeNaH7V0cD57SlOK30bIoTIGU-EVI88bz8FWBN9EiA/edit">Mở link</a></td></tr>
-        <tr><td>TA5</td><td><a href="https://docs.google.com/spreadsheets/d/1o_seik0KgVMkzDiT192bMC6__3LOog43ZeQQXa4lfbg/edit">Mở link</a></td></tr>
-    </tbody>
-</table>
+    <table id="linksTable">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Lớp</th>
+                <th>Link truy cập</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Nội dung được tạo bởi JavaScript -->
+        </tbody>
+    </table>
 
+    <script>
+        const data = [
+            { lop: "HOA6", link: "https://docs.google.com/spreadsheets/d/1XLaxI0KhRxoW2sfuECqTCEIpQ8gGYTP/edit" },
+            { lop: "HOA7", link: "https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit?gid=2129056003#gid=2129056003" },
+            { lop: "HOA8", link: "https://docs.google.com/spreadsheets/d/117ITQL2PrEn5jkV3Si7EzFmPSX3TyeD_6PwomGXo/edit?gid=2108064852#gid=2108064852" },
+            { lop: "HOA9", link: "https://docs.google.com/spreadsheets/d/117ITQL2PrEn5jkV3Si7EzFmPSX3TyeD_6PwomGXo/edit?gid=2108064852#gid=2108064852" },
+            { lop: "LY6", link: "https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit?gid=2108064852#gid=2108064852" },
+            { lop: "LY7", link: "https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit?gid=2108064852#gid=2108064852" },
+            { lop: "LY8", link: "https://docs.google.com/spreadsheets/d/1nPRBgncC6zIAz7wV3_TSo9vFz4rgCQkmU17iQ3DAQmQ/edit?gid=2108064852#gid=2108064852" },
+            { lop: "VAN6", link: "https://docs.google.com/spreadsheets/d/1jN0-MAVd_DaJrBiK1s9FvV0O3e3ulv5uaGywYCGiPr8/edit?gid=2108064852#gid=2108064852" },
+            { lop: "VAN8", link: "https://docs.google.com/spreadsheets/d/17Ni8vcIkSmC7AWhXNvcaD5b5jWzn892pxRWTiyKBMtg/edit?gid=2108064852#gid=2108064852" },
+            { lop: "TA6", link: "https://docs.google.com/spreadsheets/d/13IR01xr_i4U12SI8VVnevke7qbhhZ7DlecMpq1yX-V8/edit?gid=2108064852#gid=2108064852" },
+            { lop: "TA7", link: "https://docs.google.com/spreadsheets/d/1qfLYuKLCdT6KPEqKZcwQETEKDTH08dkGgGICXnLhnOs/edit?gid=2108064852#gid=2108064852" },
+            { lop: "TOAN7/1", link: "https://docs.google.com/spreadsheets/d/1pUu9K-bazfOvb36JA6FR4nRIdiTkblfjgt3dysgJaaU/edit?gid=2108064852#gid=2108064852" },
+            { lop: "TV1", link: "https://docs.google.com/spreadsheets/d/1JVU8YgKeTWKhtAmu8y5Dmr4KBdf2108064852/edit?usp=drive_link" },
+            { lop: "TV2", link: "https://docs.google.com/spreadsheets/d/1JVU8YgKeTWKhtAmu8y5Dmr4KBdf2108064852/edit?usp=drive_link" }
+            // bạn điền đầy đủ các link còn thiếu tương tự...
+        ];
+
+        // Tạo bảng HTML từ data
+        function createTable(){
+            const tableBody = document.getElementById("tableBody");
+            data.forEach((item, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.lop}</td>
+                    <td><a href="${item.link}" target="_blank">👉 Mở ngay</a></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        window.onload = renderTable;
+    </script>
 </body>
 </html>
