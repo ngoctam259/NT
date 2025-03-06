@@ -2,60 +2,68 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Tìm kiếm dữ liệu học viên</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ Tra cứu dữ liệu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <h2>Tìm kiếm thông tin học viên</h2>
-    <input type="text" id="searchInput" placeholder="Nhập họ tên, mã môn...">
-    <button onclick="searchData()">Tìm kiếm</button>
 
-    <table border="1" id="resultsTable">
-        <thead>
-            <tr>
-                <th>STT</th>
-                <th>Mã Môn</th>
-                <th>Họ Tên</th>
-                <th>Ngày Đóng</th>
-                <th>Số Tiền</th>
-                <th>Trạng Thái</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+<h2 style="text-align: center;">Trang chủ Tra cứu dữ liệu lớp học</h2>
 
-<script>
-let data = [];
+<table>
+    <thead>
+        <tr>
+            <th>Lớp</th>
+            <th>Link truy cập</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>HOA6</td><td><a href="https://docs.google.com/spreadsheets/d/1XLaxI0KhRxoW2sfuECqTCEIpQ8gGYTP3XJw3SuDt2nI/edit">Mở link</a></td></tr>
+        <tr><td>HOA7</td><td><a href="https://docs.google.com/spreadsheets/d/1WRAzJldvfJfQKb59yEFHH9nmzNMkVOkme8usqM3s6pY/edit">Mở link</a></td></tr>
+        <tr><td>HOA8</td><td><a href="https://docs.google.com/spreadsheets/d/117ITQL2PrEn5jkV3Si7EzFmPSX3TyeD_6PwomGXoO9o/edit">Mở link</a></td></tr>
+        <tr><td>HOA9</td><td><a href="https://docs.google.com/spreadsheets/d/1B08XsXoC9wwF0aaB4VTgG8DErcKEZVURr6ipVTEbDFc/edit">Mở link</a></td></tr>
+        <tr><td>LY6</td><td><a href="https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit">Mở link</a></td></tr>
+        <tr><td>LY7</td><td><a href="https://docs.google.com/spreadsheets/d/1yll8FqLxcLG7zHP26zoqoHILGCtAruJ6mYXJKegmck4/edit">Mở link</a></td></tr>
+        <tr><td>LY8</td><td><a href="https://docs.google.com/spreadsheets/d/1nPRBgncC6zIAz7wV3_TSo9vFz4rgCQkmU17iQ3DAQmQ/edit">Mở link</a></td></tr>
+        <tr><td>LY9</td><td><a href="https://docs.google.com/spreadsheets/d/1XCPYDNey-aSQ2L36NMOsT4gw_lLp7k13_ck9DcJkgnQ/edit">Mở link</a></td></tr>
+        <tr><td>VAN6</td><td><a href="https://docs.google.com/spreadsheets/d/1jN0-MAVd_DaJrBiK1s9FvV0O3e3ulv5uaGywYCGiPr8/edit">Mở link</a></td></tr>
+        <tr><td>VAN7</td><td><a href="https://docs.google.com/spreadsheets/d/1Jb7bA3Un4lO73hOV2HjE8L0b-89W8GSTrod3155imTI/edit">Mở link</a></td></tr>
+        <tr><td>VAN8</td><td><a href="https://docs.google.com/spreadsheets/d/17Ni8vcIkSmC7AWhXNvcaD5b5jWzn892pxRWTiyKBMtg/edit">Mở link</a></td></tr>
+        <tr><td>VAN9</td><td><a href="https://docs.google.com/spreadsheets/d/1s9OjqZpjDaWJxQDBfJJs7ITf3BqHNf5zZO2_WAXfnwE/edit">Mở link</a></td></tr>
+        <tr><td>TA1</td><td><a href="https://docs.google.com/spreadsheets/d/12Gs-1N3yugP5c5zEFPvoYkke9hLDFyigdX3gntiMPY4/edit">Mở link</a></td></tr>
+        <tr><td>TA2</td><td><a href="https://docs.google.com/spreadsheets/d/1JRSxD3WPAsgiQ_qQDyXBFDFyU66fsVpO-4QnqTIV1AE/edit">Mở link</a></td></tr>
+        <tr><td>TA3</td><td><a href="https://docs.google.com/spreadsheets/d/13ZvDSclDOclAJlSHcd63AGWwg4ejRj80psuLE07Pu84/edit">Mở link</a></td></tr>
+        <tr><td>TA4</td><td><a href="https://docs.google.com/spreadsheets/d/18TeNaH7V0cD57SlOK30bIoTIGU-EVI88bz8FWBN9EiA/edit">Mở link</a></td></tr>
+        <tr><td>TA5</td><td><a href="https://docs.google.com/spreadsheets/d/1o_seik0KgVMkzDiT192bMC6__3LOog43ZeQQXa4lfbg/edit">Mở link</a></td></tr>
+    </tbody>
+</table>
 
-// Hàm tải dữ liệu từ Google Sheets
-async function fetchData() {
-    const url = "URL_CSV_CỦA_BẠN";  // Điền URL CSV ở đây
-    const response = await fetch(url);
-    const csv = await response.text();
-    const rows = csv.split("\n").slice(1); // bỏ hàng đầu (tiêu đề)
-    data = rows.map(row => row.split(";"));
-}
-
-// Hàm tìm kiếm dữ liệu
-function searchData() {
-    const keyword = document.getElementById("searchInput").value.toLowerCase();
-    const filteredData = data.filter(row => row.some(cell => cell.toLowerCase().includes(keyword)));
-
-    const tbody = document.querySelector("#resultsTable tbody");
-    tbody.innerHTML = "";
-
-    filteredData.forEach(row => {
-        const tr = document.createElement("tr");
-        row.forEach(cell => {
-            const td = document.createElement("td");
-            td.textContent = cell;
-            tr.appendChild(td);
-        });
-        tbody.appendChild(tr);
-    });
-}
-
-// Khởi tạo dữ liệu khi tải trang
-window.onload = fetchData;
-</script>
 </body>
 </html>
