@@ -14,12 +14,20 @@
             color: #2c3e50;
             text-align: center;
         }
+        .menu-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+            gap: 10px;
+            white-space: nowrap;
+        }
         details {
             background-color: #ffffff;
             padding: 10px;
-            margin-bottom: 10px;
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            min-width: 180px;
+            flex-shrink: 0;
         }
         summary {
             font-weight: bold;
@@ -29,10 +37,10 @@
         }
         ul {
             list-style-type: none;
-            padding-left: 20px;
+            padding-left: 10px;
         }
         li {
-            margin: 8px 0;
+            margin: 5px 0;
         }
         a {
             text-decoration: none;
@@ -47,7 +55,7 @@
 
     <h2>📚 Trang chủ truy cập nhanh các lớp 📚</h2>
 
-    <div id="menu"></div>
+    <div class="menu-container" id="menu"></div>
 
     <script>
         const data = {
