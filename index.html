@@ -2,6 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trang chủ truy cập nhanh các lớp</title>
     <style>
         body {
@@ -16,10 +17,10 @@
         }
         .menu-container {
             display: flex;
-            overflow-x: auto;
-            padding: 10px;
+            flex-wrap: wrap;  /* Cho phép các danh mục xuống dòng khi màn hình nhỏ */
             gap: 10px;
-            white-space: nowrap;
+            padding: 10px;
+            justify-content: center; /* Căn giữa nội dung */
         }
         details {
             background-color: #ffffff;
@@ -27,7 +28,8 @@
             border-radius: 6px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             min-width: 180px;
-            flex-shrink: 0;
+            max-width: 250px;
+            flex-grow: 1;
         }
         summary {
             font-weight: bold;
@@ -48,6 +50,17 @@
         }
         a:hover {
             color: #d35400;
+        }
+
+        /* Responsive cho mobile */
+        @media (max-width: 768px) {
+            .menu-container {
+                flex-direction: column; /* Hiển thị dọc khi màn hình nhỏ */
+                align-items: center; /* Căn giữa */
+            }
+            details {
+                width: 90%; /* Chiều rộng gần full màn hình */
+            }
         }
     </style>
 </head>
@@ -93,8 +106,7 @@
                 {lop: "TV5", link: "https://docs.google.com/spreadsheets/d/1JxIcYJKdM_QATHc0JuxU_ONNMX0XRRa01c7LWtYE0BI/edit?usp=drive_lin"}
             ]
         };
-
-        function renderMenu() {
+function renderMenu() {
             const menu = document.getElementById('menu');
             for (let subject in data) {
                 const details = document.createElement('details');
