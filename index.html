@@ -2,142 +2,151 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trang chủ truy cập nhanh các lớp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ Ngoại ngữ</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #fff;
+            margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
         }
-        h2 {
-            color: #2c3e50;
+        header {
+            background-color: #8B0000;
+            color: white;
             text-align: center;
+            padding: 20px 0;
         }
-        .menu-container {
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .container {
             display: flex;
-            flex-wrap: wrap;  /* Cho phép các danh mục xuống dòng khi màn hình nhỏ */
-            gap: 10px;
-            padding: 10px;
-            justify-content: center; /* Căn giữa nội dung */
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px 10px;
+            gap: 20px;
         }
-        details {
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 6px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            min-width: 180px;
-            max-width: 250px;
-            flex-grow: 1;
+        .card {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            width: 220px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        summary {
-            font-weight: bold;
+        .card h2 {
+            font-size: 1.2em;
+            color: #8B0000;
+            margin-bottom: 10px;
             cursor: pointer;
-            padding: 5px;
-            outline: none;
         }
-        ul {
-            list-style-type: none;
-            padding-left: 10px;
+        .links {
+            display: none;
+            margin-top: 10px;
         }
-        li {
-            margin: 5px 0;
-        }
-        a {
+        .links a {
+            display: block;
+            color: #007BFF;
             text-decoration: none;
-            color: #3498db;
+            margin: 6px 0;
+            font-size: 0.95em;
         }
-        a:hover {
-            color: #d35400;
+        .links a:hover {
+            text-decoration: underline;
         }
-
-        /* Responsive cho mobile */
-        @media (max-width: 768px) {
-            .menu-container {
-                flex-direction: column; /* Hiển thị dọc khi màn hình nhỏ */
-                align-items: center; /* Căn giữa */
-            }
-            details {
-                width: 90%; /* Chiều rộng gần full màn hình */
-            }
+        footer {
+            background-color: #8B0000;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
-    <h2>📚 Trang chủ truy cập nhanh các lớp 📚</h2>
+<header>
+    <h1>📖 Trang chủ truy cập nhanh các lớp 📖</h1>
+</header>
 
-    <div class="menu-container" id="menu"></div>
+<div class="container">
 
-    <script>
-        const data = {
-          "KỸ NĂNG": [
-            { lop: "K2_TIN", link: "https://docs.google.com/spreadsheets/d/1up_vyZSolt6QIneSa94NFM7EPFcb1_PLPFIcirAZI10/edit?usp=drive_link" },
-            { lop: "K2_TAGT", link: "https://docs.google.com/spreadsheets/d/1faF-aKrE84vXcSgLnRv63U29MAxuvpqT_TjwixErhSk/edit?usp=sharing" },
-            { lop: "HOA", link: "https://docs.google.com/spreadsheets/d/1dt-5yPX_liDiZM2Ja0LqUxTREQk-jYIjEcg8AB0-yPo/edit?usp=sharing" }
-        ],
-        "TIẾNG ANH": [
-            { lop: "K2_TA0", link: "https://docs.google.com/spreadsheets/d/1FjdgKlJO48ukHBxnBAVqLdvv1oMvtyzaFzdrGSZDTic/edit?usp=sharing" },
-            { lop: "K2_TA1", link: "https://docs.google.com/spreadsheets/d/1O2myTBSeS2152xGR0V5vCj8nMBkWzIRa10aLwuWtMf0/edit?usp=drive_link" },
-            { lop: "K2_TA2", link: "https://docs.google.com/spreadsheets/d/14M46QnQV1H9Uo4wQLhg6co3egunaizDMpi8h4rzZkOw/edit?usp=drive_link" },
-            { lop: "K2_TA3", link: "https://docs.google.com/spreadsheets/d/1rHL_5S4Co99lnef5t-llfBwCm8G8MHKIFyAl88hJ_Jo/edit?usp=drive_link" },
-            { lop: "K2_TA4", link: "https://docs.google.com/spreadsheets/d/1VhAvWXLTLMsjtnPYmYt5dueYUO04IEd7uDaFbB9Veh0/edit?usp=drive_link" },
-            { lop: "K2_TA5", link: "https://docs.google.com/spreadsheets/d/1wbnSi32t_XFQJyjR0fEMcX-iejnkss6RW6Lm1K9eCZM/edit?usp=sharing" }
-        ],
-        "TIẾNG VIỆT": [
-            { lop: "K2_TV0", link: "https://docs.google.com/spreadsheets/d/1-gS_cwgiIV4EEzR6LtffKXfYqHruAUngrmhPn6MUAAU/edit?usp=sharing" },
-            { lop: "K2_TV1", link: "https://drive.google.com/open?id=1KEuzlx8mM95SKtjNwvIQhxPoWm3-nEnR0n8DQmrNMuM&usp=drive_copy" },
-            { lop: "K2_TV2", link: "https://drive.google.com/open?id=18BqZvaMJWqVi7cB0JAmDABPrJvhMsEOBuIqN2PBaxn0&usp=drive_copy" },
-            { lop: "K2_TV3", link: "https://drive.google.com/open?id=18te3vW9QWv7wiMF8QOX6E5iKyZzL0iI1UsNpe_nczGs&usp=drive_copy" },
-            { lop: "K2_TV4", link: "https://drive.google.com/open?id=1YtykrF7VKq2nKLJ3U4CnxNCzf_cTdVW8x4ajQV_JVVw&usp=drive_copy" },
-            { lop: "K2_TV5", link: "https://docs.google.com/spreadsheets/d/1oTy4cEaOk8kgs8RgT9jICyzbE-FgOEgO3TTkJFDdVoQ/edit?usp=sharing" }
-        ],
-        "VĂN": [
-            { lop: "K2_VAN6", link: "https://docs.google.com/spreadsheets/d/1rA7HfVnTspl3AhyL2eIClX6-MaEwZ8-lI-ur2q1dSR4/edit?usp=sharing" },
-            { lop: "K2_VAN7", link: "https://docs.google.com/spreadsheets/d/16SJVfHaW0-auJ5zPu_P8mPXSuEp03E-e7aDfTaMTcfc/edit?usp=sharing" },
-            { lop: "K2_VAN8", link: "https://docs.google.com/spreadsheets/d/124FD7dzMQNad47QCc6qxIz04namlh_VpO9WxWtcqIVo/edit?usp=sharing" },
-            { lop: "K2_VAN9", link: "https://docs.google.com/spreadsheets/d/1aF1tX5wj5GfMBPWzjxpQBYdTsqgM_TihFUlPo-_1Pyw/edit?usp=sharing" }
-        ],
-        "ANH": [
-            { lop: "K2_ANH6", link: "https://docs.google.com/spreadsheets/d/1f2PywPhHv3V64HvRzEEhdQNJ59TreQp2vJMckspP7sI/edit?usp=sharing" },
-            { lop: "K2_ANH7", link: "https://docs.google.com/spreadsheets/d/19LM-pkeZCNnxYWucOhCoy9RRdskrBSffd566mHSQ1do/edit?usp=sharing" },
-            { lop: "K2_ANH8", link: "https://docs.google.com/spreadsheets/d/1m_jS_R8mq--khaq_sz5TP3yjMzxQP_5oNsgXzo1FRfg/edit?usp=sharing" },
-            { lop: "K2_ANH9", link: "https://docs.google.com/spreadsheets/d/18wV6XzWyMTrSD4nzsGxcZVD8AjYVqmXz9o9YDGJiAHM/edit?usp=sharing" }
-        ],
-        "TOÁN": [
-            { lop: "K2_TOAN6", link: "https://docs.google.com/spreadsheets/d/1Djiiom1bfdikC96HvUxfYD-zTwHLauFc9VXrvkDewWQ/edit?usp=sharing" },
-            { lop: "K2_TOAN7", link: "https://docs.google.com/spreadsheets/d/175OnbEhSaO_SWiL2TIwXLKBQmUIUzbxQI9ndwx0YC_U/edit?usp=sharing" },
-            { lop: "K2_TOAN8", link: "https://docs.google.com/spreadsheets/d/1Vioet3IowRAQ86rY_kwybpv-Smg3an-ic_1spi0QUUw/edit?usp=sharing" },
-            { lop: "K2_TOAN9", link: "https://docs.google.com/spreadsheets/d/1LQGWPAbdEfH1RO0_Kb5y6vZ64c_6jtzBVNQgrMRzp18/edit?usp=sharing" }
-        ]
-    };
-function renderMenu() {
-            const menu = document.getElementById('menu');
-            for (let subject in data) {
-                const details = document.createElement('details');
-                const summary = document.createElement('summary');
-                summary.textContent = subject;
+    <div class="card">
+        <h2 onclick="toggleLinks(this)">▼ KỸ NĂNG</h2>
+        <div class="links">
+            <a href="https://docs.google.com/spreadsheets/d/1zDcYa4KgQ6xIvkNqxjGT1NpYJ3GWIp1B_3dlCoKPeNU/edit?usp=drive_link" target="_blank">TAGT</a>
+            <a href="https://docs.google.com/spreadsheets/d/1iC_c7d2s87FP0ml6Tp85C5nkTEm17VSRJW8v7dvRHuQ/edit?gid=930283493#gid=930283493" target="_blank">TIN HOC</a>
+            <a href="https://docs.google.com/spreadsheets/d/1Uz1DS8NypTuqMMDNsCJK9eMj3vSWQXNrjVXDqdMWPGQ/edit?usp=drive_link" target="_blank">HOA</a>
+        </div>
+    </div>
 
-                const ul = document.createElement('ul');
-                data[subject].forEach(item => {
-                    const li = document.createElement('li');
-                    const a = document.createElement('a');
-                    a.textContent = item.lop;
-                    a.href = item.link;
-                    a.target = "_blank";
-                    li.appendChild(a);
-                    ul.appendChild(li);
-                });
+    <div class="card">
+        <h2 onclick="toggleLinks(this)">▼ TIẾNG ANH</h2>
+        <div class="links">
+            <a href="https://docs.google.com/spreadsheets/d/1A0z0D9InSMPOE7kZfYu7ZARnAC7s9gSuysJmlQkPVY8/edit?gid=554398585#gid=554398585" target="_blank">TA0</a>
+            <a href="https://docs.google.com/spreadsheets/d/13rD2MKr6oSZfhLJuFokd7v9aZWK7X_o5c8IvP9Opq5I/edit?gid=930283493#gid=930283493" target="_blank">TA1</a>
+            <a href="https://docs.google.com/spreadsheets/d/1hVccmWHkLTGdoLbCSC5E6heWM_ybOWcHFqzYxA1QvQY/edit?gid=930283493#gid=930283493" target="_blank">TA2</a>
+            <a href="https://docs.google.com/spreadsheets/d/1hVOaa7REUzuJrcNz4THL_hS6E8EGDI997xG58WIUDII/edit?gid=930283493#gid=930283493" target="_blank">TA3</a>
+            <a href="https://docs.google.com/spreadsheets/d/164nDDK-8Va5X_Xyqr4beZQgPLRbSFWU7qhYwmEawFTM/edit?gid=930283493#gid=930283493" target="_blank">TA4</a>
+            <a href="https://docs.google.com/spreadsheets/d/1GPQzNh2rYa3l-W8uzaezGdzWFf2-SqL2CdvEJ0h6AUM/edit?gid=930283493#gid=930283493" target="_blank">TA5</a>
+        </div>
+    </div>
 
-                details.appendChild(summary);
-                details.appendChild(ul);
-                menu.appendChild(details);
-            }
-        }
+    <div class="card">
+        <h2 onclick="toggleLinks(this)">▼ TIẾNG VIỆT</h2>
+        <div class="links">
+            <a href="https://docs.google.com/spreadsheets/d/1cKN2rs05SU9g0qwSj4lWsLPnUsPXQOqf00MLBwPUnlc/edit?usp=drive_link" target="_blank">TV0</a>
+            <a href="https://docs.google.com/spreadsheets/d/1fgDiQlrmfmD1gFCbaFHddQiwDobLjlj6ZRHwyFY1BVE/edit?usp=drive_link" target="_blank">TV1</a>
+            <a href="https://docs.google.com/spreadsheets/d/10hzbNeqRbW1NzU5mvGkVlarL6yKtfXY01Tl43fTTOe4/edit?usp=drive_link" target="_blank">TV2</a>
+            <a href="https://docs.google.com/spreadsheets/d/1XamcdqyVi4h8KIbcIR2szuZhTGXmJN7GbC8lnhEpXHU/edit?usp=drive_link" target="_blank">TV3</a>
+            <a href="https://docs.google.com/spreadsheets/d/17xisckIuUmf7WocYvb4eIUGD-RIK1IzKild1KNE96to/edit?usp=drive_link" target="_blank">TV4</a>
+            <a href="https://docs.google.com/spreadsheets/d/1oACyo1Qx2eOJeL_KuKrMZCAYzRI2hCFrR5OA-LcQ5TY/edit?usp=drive_link" target="_blank">TV5</a>
+        </div>
+    </div>
 
-        window.onload = renderMenu;
-    </script>
+    <div class="card">
+        <h2 onclick="toggleLinks(this)">▼ VĂN</h2>
+        <div class="links">
+            <a href="https://docs.google.com/spreadsheets/d/1BpMBN2cb8QMZslolRNfdzaMjQ-pXkvjobqVw3gpvTZY/edit?usp=drive_link" target="_blank">VAN 6</a>
+            <a href="https://docs.google.com/spreadsheets/d/1TpZHuIyQJCEZ1FFFTSmmypoR2kc-XppinKv8cUyigl4/edit?usp=drive_link" target="_blank">VAN 7</a>
+            <a href="https://docs.google.com/spreadsheets/d/1SzQ8U5SCT5cvHHpwcb3y2IBWagF1vDYBMcWZ1W-hVUg/edit?usp=drive_link" target="_blank">VAN 8</a>
+            <a href="https://docs.google.com/spreadsheets/d/1I6Km08xYMgF2hePkXWWBQj8sHfO5Xc8p358udkBukr0/edit?gid=930283493#gid=930283493" target="_blank">VAN 9</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 onclick="toggleLinks(this)">▼ ANH</h2>
+        <div class="links">
+            <a href="https://docs.google.com/spreadsheets/d/10yePru_4cGJf1DIHzpO7tnB1tOrOku7sfFMfNxr41eI/edit?gid=930283493#gid=930283493" target="_blank">ANH 6</a>
+            <a href="https://docs.google.com/spreadsheets/d/16muGwtxOMiyPBwkcUZScKyRm197O0VEXcMw8C-Jpb7Y/edit?gid=930283493#gid=930283493" target="_blank">ANH 7</a>
+            <a href="https://docs.google.com/spreadsheets/d/18ByFRABCH7vZs2L6FujXPKZMyEVA0QOl_ie5UzJRRA8/edit?gid=930283493#gid=930283493" target="_blank">ANH 8</a>
+            <a href="https://docs.google.com/spreadsheets/d/1BOpM9VI5Lfe_0qC3DTvN_21d9igfwDyWpVkt0uKDjgw/edit?gid=930283493#gid=930283493" target="_blank">ANH 9</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2 onclick="toggleLinks(this)">▼ TOÁN</h2>
+        <div class="links">
+            <a href="https://docs.google.com/spreadsheets/d/1Ca2jtjsHzmGOQhWLjpc4YB85-7jqhAusQcwB8mF1urg/edit?gid=930283493#gid=930283493" target="_blank">TOAN 6</a>
+            <a href="https://docs.google.com/spreadsheets/d/1DGAks5gxPhN5xjGVU4_3D-H1vVwYaDUbeaXkuHDomJ0/edit?gid=930283493#gid=930283493" target="_blank">TOAN 7</a>
+            <a href="https://docs.google.com/spreadsheets/d/1GlOLrAZ78Z25043c2RPImc9tiK0iy5LtdnEGjPJ_IZo/edit?gid=930283493#gid=930283493" target="_blank">TOAN 8</a>
+            <a href="https://docs.google.com/spreadsheets/d/1CxIaVlawjQDob3SobB1rzhtjFofZ9Pq9i5ne_5uPv0I/edit?gid=930283493#gid=930283493" target="_blank">TOAN 9</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Trung tâm Ngoại ngữ | All rights reserved.
+</footer>
+
+<script>
+    function toggleLinks(titleElement) {
+        const linksDiv = titleElement.nextElementSibling;
+        linksDiv.style.display = linksDiv.style.display === "block" ? "none" : "block";
+    }
+</script>
 
 </body>
 </html>
