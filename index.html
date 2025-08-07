@@ -1,79 +1,92 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ Ngoại ngữ</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #8B0000;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 30px 10px;
-            gap: 20px;
-        }
-        .card {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 20px;
-            width: 220px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .card h2 {
-            font-size: 1.2em;
-            color: #8B0000;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        .links {
-            display: none;
-            margin-top: 10px;
-        }
-        .links a {
-            display: block;
-            color: #007BFF;
-            text-decoration: none;
-            margin: 6px 0;
-            font-size: 0.95em;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            background-color: #8B0000;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 30px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nguyen Toan Center - Trang chủ</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+    }
+    .banner {
+      position: relative;
+      background: url('banner.png') no-repeat center center/cover;
+      height: 250px;
+    }
+    .banner-logo {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      height: 100px;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #8B0000;
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px 10px;
+      gap: 20px;
+    }
+    .card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .card h2 {
+      font-size: 1.2em;
+      color: #8B0000;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .links {
+      display: none;
+      margin-top: 10px;
+    }
+    .links a {
+      display: block;
+      color: #007BFF;
+      text-decoration: none;
+      margin: 6px 0;
+      font-size: 0.95em;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: #8B0000;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 30px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
+  <div class="banner">
+    <img src="logo.png" alt="Logo" class="banner-logo" />
+  </div>
+
+  <header>
     <h1>📖 Trang chủ truy cập nhanh các lớp 📖</h1>
-</header>
+  </header>
 
-<div class="container">
-
+  <div class="container">
     <div class="card">
-        <h2 onclick="toggleLinks(this)">▼ KỸ NĂNG</h2>
+      <h2 onclick="toggleLinks(this)">▼ KỸ NĂNG</h2>
         <div class="links">
             <a href="https://docs.google.com/spreadsheets/d/1zDcYa4KgQ6xIvkNqxjGT1NpYJ3GWIp1B_3dlCoKPeNU/edit?usp=drive_link" target="_blank">TAGT</a>
             <a href="https://docs.google.com/spreadsheets/d/1iC_c7d2s87FP0ml6Tp85C5nkTEm17VSRJW8v7dvRHuQ/edit?gid=930283493#gid=930283493" target="_blank">TIN HOC</a>
@@ -134,19 +147,17 @@
             <a href="https://docs.google.com/spreadsheets/d/1CxIaVlawjQDob3SobB1rzhtjFofZ9Pq9i5ne_5uPv0I/edit?gid=930283493#gid=930283493" target="_blank">TOAN 9</a>
         </div>
     </div>
+  </div>
 
-</div>
+  <footer>
+    © 2025 Trung tâm Ngoại ngữ Nguyễn Toàn | All rights reserved.
+  </footer>
 
-<footer>
-    © 2025 Trung tâm Ngoại ngữ Nguyễn Toàn
-</footer>
-
-<script>
+  <script>
     function toggleLinks(titleElement) {
-        const linksDiv = titleElement.nextElementSibling;
-        linksDiv.style.display = linksDiv.style.display === "block" ? "none" : "block";
+      const linksDiv = titleElement.nextElementSibling;
+      linksDiv.style.display = linksDiv.style.display === "block" ? "none" : "block";
     }
-</script>
-
+  </script>
 </body>
 </html>
