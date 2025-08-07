@@ -13,13 +13,18 @@
     .banner {
       position: relative;
       background: url('banner.png') no-repeat center center/cover;
-      height: 250px;
+      height: 150px;
     }
     .banner-logo {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      height: 100px;
+      top: 15px;
+      left: 15px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      background-color: white;
     }
     header {
       text-align: center;
@@ -72,20 +77,30 @@
       padding: 10px 0;
       margin-top: 30px;
     }
+
+    @media (max-width: 600px) {
+      .banner {
+        height: 120px;
+      }
+      .banner-logo {
+        width: 60px;
+        height: 60px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="banner">
-    <img src="logo.png" alt="Logo" class="banner-logo" />
-  </div>
+<div class="banner">
+  <img src="logo.png" alt="Logo" class="banner-logo" />
+</div>
 
-  <header>
-    <h1>📖 Trang chủ truy cập nhanh các lớp 📖</h1>
-  </header>
+<header>
+  <h1>📖 Trang chủ truy cập nhanh các lớp 📖</h1>
+</header>
 
-  <div class="container">
-    <div class="card">
+<div class="container">
+  <div class="card">
       <h2 onclick="toggleLinks(this)">▼ KỸ NĂNG</h2>
         <div class="links">
             <a href="https://docs.google.com/spreadsheets/d/1zDcYa4KgQ6xIvkNqxjGT1NpYJ3GWIp1B_3dlCoKPeNU/edit?usp=drive_link" target="_blank">TAGT</a>
