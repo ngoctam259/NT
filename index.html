@@ -11,13 +11,20 @@
       background-color: #f9f9f9;
     }
 
-    /* Banner không logo, full width, tự co giãn theo chiều ngang */
-   .banner {
-  width: 100%;
-  aspect-ratio: 6 / 1; /* Tăng tỷ lệ chiều ngang lên để chiều cao giảm còn một nửa */
-  background: url('banner.png') no-repeat center center;
-  background-size: cover;
-}
+    /* Banner ảnh giữ nguyên tỉ lệ, hiển thị nhỏ lại còn 1/2 chiều ngang */
+    .banner {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background-color: #f9f9f9;
+      padding: 10px 0;
+    }
+
+    .banner img {
+      width: 50%;         /* 👈 Thu nhỏ còn một nửa chiều rộng trình duyệt */
+      height: auto;       /* 👈 Giữ tỉ lệ gốc */
+      display: block;
+    }
 
     header {
       text-align: center;
@@ -79,12 +86,19 @@
       margin-top: 30px;
     }
 
+    @media (max-width: 768px) {
+      .banner img {
+        width: 90%; /* Co giãn cho màn hình nhỏ */
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Banner không có logo, full width -->
-<div class="banner"></div>
+<!-- Banner ảnh thu nhỏ -->
+<div class="banner">
+  <img src="banner.png" alt="Banner" />
+</div>
 <header>
   <h1>📖 Trang chủ truy cập nhanh các lớp 📖</h1>
 </header>
