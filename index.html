@@ -10,32 +10,27 @@
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
     }
+
+    /* Banner không logo, full width, tự co giãn theo chiều ngang */
     .banner {
-      position: relative;
-      background: url('banner.png') no-repeat center center/cover;
-      height: 150px;
+      width: 100%;
+      aspect-ratio: 3 / 1; /* Tỉ lệ 3:1 (rộng hơn cao), phù hợp trình duyệt PC & mobile */
+      background: url('banner.png') no-repeat center center;
+      background-size: cover;
     }
-    .banner-logo {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid white;
-      background-color: white;
-    }
+
     header {
       text-align: center;
       padding: 20px;
       background-color: #8B0000;
       color: white;
     }
+
     header h1 {
       margin: 0;
       font-size: 2em;
     }
+
     .container {
       display: flex;
       flex-wrap: wrap;
@@ -43,6 +38,7 @@
       padding: 30px 10px;
       gap: 20px;
     }
+
     .card {
       background-color: #ffffff;
       border-radius: 8px;
@@ -50,16 +46,19 @@
       width: 220px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+
     .card h2 {
       font-size: 1.2em;
       color: #8B0000;
       margin-bottom: 10px;
       cursor: pointer;
     }
+
     .links {
       display: none;
       margin-top: 10px;
     }
+
     .links a {
       display: block;
       color: #007BFF;
@@ -67,9 +66,11 @@
       margin: 6px 0;
       font-size: 0.95em;
     }
+
     .links a:hover {
       text-decoration: underline;
     }
+
     footer {
       background-color: #8B0000;
       color: white;
@@ -78,23 +79,12 @@
       margin-top: 30px;
     }
 
-    @media (max-width: 600px) {
-      .banner {
-        height: 120px;
-      }
-      .banner-logo {
-        width: 60px;
-        height: 60px;
-      }
-    }
   </style>
 </head>
 <body>
 
-<div class="banner">
-  <img src="logo.png" alt="Logo" class="banner-logo" />
-</div>
-
+<!-- Banner không có logo, full width -->
+<div class="banner"></div>
 <header>
   <h1>📖 Trang chủ truy cập nhanh các lớp 📖</h1>
 </header>
