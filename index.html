@@ -3,144 +3,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nguyen Toan Center - Trang chủ</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      color: #222;
-    }
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+  }
 
-    .main-wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 16px 40px;
-    }
+  /* Banner */
+  .banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 16px 0 0;
+  }
 
-    .banner {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      padding: 16px 0 0;
-    }
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 
-    .banner-inner {
-      width: 100%;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    }
+  /* Tiêu đề */
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #8B0000;
+    color: white;
+  }
 
-    .banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+  header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+  }
 
-    header {
-      text-align: center;
-      padding: 18px 12px;
-      margin-top: 16px;
-      border-radius: 16px;
-      background: linear-gradient(120deg, #8B0000, #b02121);
-      color: #fff;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-    }
+  /* 👉 Xếp ngang – hết chỗ mới xuống hàng */
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;         /* xuống hàng khi hết chỗ */
+    gap: 18px;               /* khoảng cách giữa các card */
+    justify-content: flex-start;
+    padding: 20px;
+  }
 
-    header h1 {
-      margin: 0;
-      font-size: 1.7rem;
-      letter-spacing: 0.5px;
-    }
+  /* 👉 Card gọn */
+  .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 12px 16px;
+    width: 180px;            /* chiều rộng card gọn */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    border: 1px solid #e5e5e5;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
 
-    .cards-wrapper {
-      margin-top: 24px;
-    }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+  }
 
-    .cards-grid {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    }
+  /* Tiêu đề card */
+  .card h2 {
+    font-size: 1rem;
+    color: #8B0000;
+    margin: 0 0 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
 
+  /* Danh sách link */
+  .links {
+    display: block;          /* nếu bạn cần ẩn/hiện thì đổi thành none */
+    margin-top: 4px;
+  }
+
+  .links a {
+    display: block;
+    color: #0066ff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 3px 0;
+  }
+
+  .links a:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #8B0000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 768px) {
     .card {
-      background-color: #ffffff;
-      border-radius: 16px;
-      padding: 16px 18px 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-      border: 1px solid #ececec;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      width: 45%;   /* gọn đẹp cho điện thoại */
     }
+  }
 
-    .card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, #8B0000, #f19b38);
-      opacity: 0.9;
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;  /* khi quá nhỏ thì 1 cột */
     }
+  }
+</style>
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.10);
-      border-color: #e0e0e0;
-    }
-
-    .card h2 {
-      font-size: 1.05rem;
-      color: #8B0000;
-      margin: 0 0 8px;
-      cursor: pointer;
-      text-align: center;
-      font-weight: 600;
-    }
-
-    .card h2.active {
-      color: #b02121;
-    }
-
-    .links {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .links a {
-      display: block;
-      color: #0056b3;
-      text-decoration: none;
-      margin: 5px 0;
-      font-size: 0.95rem;
-      text-align: center;
-      padding: 6px 8px;
-      border-radius: 10px;
-      background: #f5f7ff;
-    }
-
-    .links a:hover {
-      text-decoration: none;
-      background: #e7ecff;
-    }
-
-    footer {
-      background-color: #8B0000;
-      color: white;
-      text-align: center;
-      padding: 10px 0;
-      margin-top: 30px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
